@@ -5,9 +5,9 @@ using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Sandbox.Business.Mapping;
 using Sandbox.DAL.DB;
 using Serilog;
-using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 
 Log.Logger = new LoggerConfiguration()
@@ -54,6 +54,7 @@ try
 	
 	#region Services
 
+	builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
 	builder.Services.AddApiVersioning(opts =>
 	{
 		opts.DefaultApiVersion = new ApiVersion(1, 0);
