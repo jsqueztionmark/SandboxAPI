@@ -1,6 +1,10 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SandboxAPI", "SandboxAPI.csproj", "{C039914E-2DA9-4F16-B7CD-F0CC69509469}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.API", "Sandbox.API.csproj", "{6E49BBD5-8962-4739-906B-7BB2940953BD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.Business", "..\Sandbox.Business\Sandbox.Business.csproj", "{8F7C5D47-89C6-4CFF-AD50-7D2E1D1BDC39}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sandbox.DAL", "..\Sandbox.DAL\Sandbox.DAL.csproj", "{BC9BAE22-DA62-4B3F-8F35-E11DAA6913EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -8,9 +12,17 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C039914E-2DA9-4F16-B7CD-F0CC69509469}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C039914E-2DA9-4F16-B7CD-F0CC69509469}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C039914E-2DA9-4F16-B7CD-F0CC69509469}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C039914E-2DA9-4F16-B7CD-F0CC69509469}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E49BBD5-8962-4739-906B-7BB2940953BD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E49BBD5-8962-4739-906B-7BB2940953BD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E49BBD5-8962-4739-906B-7BB2940953BD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E49BBD5-8962-4739-906B-7BB2940953BD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8F7C5D47-89C6-4CFF-AD50-7D2E1D1BDC39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8F7C5D47-89C6-4CFF-AD50-7D2E1D1BDC39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8F7C5D47-89C6-4CFF-AD50-7D2E1D1BDC39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8F7C5D47-89C6-4CFF-AD50-7D2E1D1BDC39}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC9BAE22-DA62-4B3F-8F35-E11DAA6913EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC9BAE22-DA62-4B3F-8F35-E11DAA6913EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC9BAE22-DA62-4B3F-8F35-E11DAA6913EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC9BAE22-DA62-4B3F-8F35-E11DAA6913EF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
