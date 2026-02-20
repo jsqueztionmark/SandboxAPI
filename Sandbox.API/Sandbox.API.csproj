@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+    <PropertyGroup>
+        <TargetFramework>net10.0</TargetFramework>
+        <Nullable>enable</Nullable>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Asp.Versioning.Mvc" Version="8.1.1" />
+        <PackageReference Include="Asp.Versioning.Mvc.ApiExplorer" Version="8.1.1" />
+        <PackageReference Include="Asp.Versioning.WebApi" Version="7.1.0" />
+        <PackageReference Include="Azure.AI.OpenAI" Version="2.1.0" />
+        <PackageReference Include="Azure.Extensions.AspNetCore.Configuration.Secrets" Version="1.4.0" />
+        <PackageReference Include="Azure.Identity" Version="1.17.1" />
+        <PackageReference Include="Azure.Security.KeyVault.Secrets" Version="4.8.0" />
+        <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.13" />
+        <PackageReference Include="Microsoft.Data.SqlClient" Version="6.1.4" />
+        <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="10.0.3" />
+        <PackageReference Include="Serilog.AspNetCore" Version="10.0.0" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="9.0.6" />
+        <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="9.0.6" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Content Update="appsettings.Development.json">
+        <DependentUpon>appsettings.json</DependentUpon>
+      </Content>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Sandbox.Business\Sandbox.Business.csproj" />
+      <ProjectReference Include="..\Sandbox.DAL\Sandbox.DAL.csproj" />
+    </ItemGroup>
+
+</Project>
