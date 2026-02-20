@@ -6,7 +6,9 @@ using Azure.Security.KeyVault.Secrets;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
 using Sandbox.Business.Mapping;
+using Sandbox.Business.Services;
 using Sandbox.DAL.DB;
+using Sandbox.DAL.Repositories;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
 
@@ -54,7 +56,7 @@ try
 	
 	#region Services
 
-	builder.Services.AddAutoMapper(typeof(MappingProfile).Assembly);
+	builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(MappingProfile).Assembly));
 	builder.Services.AddApiVersioning(opts =>
 	{
 		opts.DefaultApiVersion = new ApiVersion(1, 0);
@@ -82,6 +84,10 @@ try
 			// License = new OpenApiLicense { Name = "MIT", Url = new Uri("https://example.com/license") }
 		});
 	});
+	
+	//Repos & local services
+	builder.Services.AddScoped<ITestService, TestService>();
+	builder.Services.AddTransient<ITestRepository, TestRepository>();
 	
 	builder.Services.AddOpenApi();
 	builder.Services.AddControllers();
