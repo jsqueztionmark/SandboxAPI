@@ -1,4 +1,4 @@
-using Microsoft.EntityFrameworkCore;
+using Local.Core.Mapping;
 using System;
 using System.Collections.Generic;
 using System.Linq;
