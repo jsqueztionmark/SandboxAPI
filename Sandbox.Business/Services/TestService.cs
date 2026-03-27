@@ -1,4 +1,3 @@
-using AutoMapper;
 using Microsoft.Extensions.Logging;
 using Sandbox.Business.Models;
 using Sandbox.DAL.Repositories;
@@ -13,15 +12,12 @@ public interface ITestService
 public class TestService : ITestService
 {
 	private readonly ILogger<TestService> _logger;
-	private readonly IMapper _mapper;
 	private readonly ITestRepository _testRepository;
 	
 	public TestService(ILogger<TestService> logger, 
-						IMapper mapper,
 						ITestRepository testRepository)
 	{
 		_logger = logger;
-		_mapper = mapper;
 		_testRepository = testRepository;
 	}
 	
@@ -30,7 +26,7 @@ public class TestService : ITestService
 		try
 		{
 			var retVal = _testRepository.GetAll();
-			return _mapper.Map<IEnumerable<TestModel>>(retVal);
+			return null;
 		}
 		catch (Exception ex)
 		{
