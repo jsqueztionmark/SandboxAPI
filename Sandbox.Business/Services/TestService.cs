@@ -1,5 +1,6 @@
+using Local.Core.Mapping;
+using Local.Core.Providers;
 using Microsoft.Extensions.Logging;
-using Sandbox.Business.Mapping;
 using Sandbox.Business.Models;
 using Sandbox.DAL.Entities;
 using Sandbox.DAL.Repositories;
@@ -15,15 +16,15 @@ public class TestService : ITestService
 {
 	private readonly ILogger<TestService> _logger;
 	private readonly ITestRepository _testRepository;
-	private readonly TestEntityConverter _testEntityConverter;
+	private readonly IEntityConverter<TestEntity, TestModel> _testEntityConverter;
 	
 	public TestService(ILogger<TestService> logger, 
 						ITestRepository testRepository,
-						TestEntityConverter converter)
+						IEntityConverterProvider converterProvider)
 	{
 		_logger = logger;
 		_testRepository = testRepository;
-		_testEntityConverter = converter;
+		_testEntityConverter = converterProvider.GetConverter<TestEntity, TestModel>();
 	}
 	
 	public IEnumerable<TestModel?> GetAllTestyThings()

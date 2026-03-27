@@ -5,9 +5,13 @@ using Azure.Identity;
 using Azure.Security.KeyVault.Secrets;
 using Microsoft.Data.SqlClient;
 using Microsoft.EntityFrameworkCore;
+using Local.Core.Mapping;
+using Local.Core.Providers;
 using Sandbox.Business.Mapping;
+using Sandbox.Business.Models;
 using Sandbox.Business.Services;
 using Sandbox.DAL.DB;
+using Sandbox.DAL.Entities;
 using Sandbox.DAL.Repositories;
 using Serilog;
 using Serilog.Sinks.SystemConsole.Themes;
@@ -87,7 +91,8 @@ try
 	});
 	
 	//Repos & local services
-	builder.Services.AddScoped<TestEntityConverter>();
+	builder.Services.AddScoped<IEntityConverter<TestEntity, TestModel>, TestEntityConverter>();
+	builder.Services.AddScoped<IEntityConverterProvider, EntityConverterProvider>();
 	builder.Services.AddScoped<ITestService, TestService>();
 	builder.Services.AddTransient<ITestRepository, TestRepository>();
 	
