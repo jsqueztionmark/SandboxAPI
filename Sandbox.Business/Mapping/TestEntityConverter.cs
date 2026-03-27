@@ -1,3 +1,4 @@
+using Local.Core.Mapping;
 using Sandbox.Business.Models;
 using Sandbox.DAL.Entities;
 
