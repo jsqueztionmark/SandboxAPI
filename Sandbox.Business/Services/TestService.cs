@@ -31,8 +31,8 @@ public class TestService : ITestService
 		try
 		{
 			var entities = _testRepository.GetAll();
-			var retVal = _testEntityConverter.ToModels(entities);
-			return retVal;
+			var models = _testEntityConverter.ToModels(entities);
+			return models;
 		}
 		catch (Exception ex)
 		{
