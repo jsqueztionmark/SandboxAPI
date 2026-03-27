@@ -56,7 +56,7 @@ try
 	
 	#region Services
 
-	builder.Services.AddAutoMapper(cfg => cfg.AddMaps(typeof(MappingProfile).Assembly));
+
 	builder.Services.AddApiVersioning(opts =>
 	{
 		opts.DefaultApiVersion = new ApiVersion(1, 0);
