@@ -56,6 +56,7 @@ try
 	
 	#region Services
 
+	
 
 	builder.Services.AddApiVersioning(opts =>
 	{
@@ -86,6 +87,7 @@ try
 	});
 	
 	//Repos & local services
+	builder.Services.AddScoped<TestEntityConverter>();
 	builder.Services.AddScoped<ITestService, TestService>();
 	builder.Services.AddTransient<ITestRepository, TestRepository>();
 	
